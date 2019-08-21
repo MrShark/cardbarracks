@@ -1,9 +1,9 @@
-import csv
+import json
 import collections
 
 
 def readfile(barrackfile):
-    with open(barrackfile) as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            yield(collections.namedtuple("Grunt", row.keys())(*row.values()))
+    with open(barrackfile) as jsonfile:
+        for row in jsonfile:
+            obj = json.loads(row)
+            yield(collections.namedtuple("Grunt", obj.keys())(*obj.values()))
