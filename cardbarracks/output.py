@@ -55,11 +55,11 @@ class pdffile:
         self.canvas.setFillColorRGB(1, 1, 1)
         self.canvas.roundRect(px, py, w * mm, h * mm, 2, stroke=1, fill=1)
         self.canvas.setFillColorRGB(0, 0, 0)
-        start = py - lh
+        start = py + h * mm - 2 * lh
         if label:
             self.canvas.setFont("Helvetica", th)
             self.canvas.drawString(px + m, start, label)
-            start = lh
+            start -= th * 1.2
         self.canvas.setFont("Helvetica", th)
         self.canvas.drawString(px + m, start, s)
 
