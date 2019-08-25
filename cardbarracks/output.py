@@ -61,7 +61,9 @@ class pdffile:
             self.canvas.drawString(px + m, start, label)
             start -= th * 1.2
         self.canvas.setFont("Helvetica", th)
-        self.canvas.drawString(px + m, start, s)
+        for l in s.splitlines():
+            self.canvas.drawString(px + m, start, l)
+            start -= th * 1.2
 
     def box(self, x, y, h, w, s, count=1, radius=2):
         px = x * mm
