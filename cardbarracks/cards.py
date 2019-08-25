@@ -33,7 +33,7 @@ class Use_me_Card(Card):
         renderer.box(20.833, 45, 4, 14.666, "Struck", 1)
         renderer.box(36.166, 45, 4, 14.666, "Killed", 1)
         for n, w in enumerate(self.grunt.weapons):
-            renderer.string(28.5, 24.5+n*5, 4, 22, "{} ({})".format(*w))
+            renderer.string(28.5, 24.5+n*5, 4, 22, "{} {}".format(*w))
 
         # renderer.string(5, 44, 10, 4, "Notes")
         renderer.text(5, 50, self.WIDTH - 10, self.HEIGHT - 55, 4, self.grunt.notes, label="Notes")
