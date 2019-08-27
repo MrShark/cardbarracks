@@ -29,14 +29,14 @@ class Use_me_Card(Card):
 
         # renderer.string(26, 20, 10, 4, "Type: " + self.grunt.type)
 
-        renderer.box(5, 45, 4, 14.666, "Wing.", 1)
-        renderer.box(20.833, 45, 4, 14.666, "Struck", 1)
-        renderer.box(36.166, 45, 4, 14.666, "Killed", 1)
+        renderer.box(28.5, 24.5, 4, 22.5, "Wing.", 1)
+        renderer.box(28.5, 29.5, 4, 22.5, "Struck", 1)
+        renderer.box(28.5, 34.5, 4, 22.5, "Killed", 1)
         for n, w in enumerate(self.grunt.weapons):
-            renderer.string(28.5, 24.5+n*5, 4, 22, "{} {}".format(*w))
+            renderer.string(5, 42+n*5, 4, self.WIDTH - 10, "{}  ({})".format(*w))
 
         # renderer.string(5, 44, 10, 4, "Notes")
-        renderer.text(5, 50, self.WIDTH - 10, self.HEIGHT - 55, 4, self.grunt.notes, label="Notes")
+        renderer.text(5, 43 + len(self.grunt.weapons)*5, self.WIDTH - 10 , self.HEIGHT - 47 - len(self.grunt.weapons)*5, 4, self.grunt.notes, label="Notes")
 
 
 def get_class(cardformat):
